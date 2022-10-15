@@ -28,8 +28,8 @@ jobs:
     - name: Build windows
       run: GO111MODULE=off CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o windows -v ./...
     
-    - name: Build mipsle
-      run: GO111MODULE=off CGO_ENABLED=0 GOOS=linux GOARCH=mipsle go build -o mipsle -v ./...
+    - name: Build arm
+      run: GO111MODULE=off CGO_ENABLED=0 GOARCH=arm GOARM=5 go build -o arm -v ./...
       
       
     - name: Deploy to GitHub Pages
