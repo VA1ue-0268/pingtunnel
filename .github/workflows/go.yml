@@ -26,10 +26,10 @@ jobs:
       run: GO111MODULE=off CGO_ENABLED=0 go build -v ./...
       
     - name: Build windows
-      run: GO111MODULE=off CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -v ./... -o windows main.go
+      run: GO111MODULE=off CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o windows -v ./...
     
     - name: Build mipsle
-      run: GO111MODULE=off CGO_ENABLED=0 GOOS=linux GOARCH=mipsle go build -v ./... -o mipsle main.go
+      run: GO111MODULE=off CGO_ENABLED=0 GOOS=linux GOARCH=mipsle go build -o mipsle -v ./...
       
       
     - name: Deploy to GitHub Pages
