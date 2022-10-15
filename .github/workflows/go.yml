@@ -25,6 +25,13 @@ jobs:
     - name: Build
       run: GO111MODULE=off CGO_ENABLED=0 go build -v ./...
       
+    - name: Build windows
+      run: GO111MODULE=off CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -v ./...
+    
+    - name: Build mipsle
+      run: GO111MODULE=off CGO_ENABLED=0 GOOS=linux GOARCH=mipsle go build -v ./...
+      
+      
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with: 
