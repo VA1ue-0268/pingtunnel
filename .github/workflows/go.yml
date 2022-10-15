@@ -24,3 +24,9 @@ jobs:
         fi
     - name: Build
       run: GO111MODULE=off go build -v ./...
+      
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.0.0
+      with: 
+        branch: gh-pages
+        folder: dist
