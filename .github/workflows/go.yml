@@ -23,7 +23,7 @@ jobs:
             dep ensure
         fi
     - name: Build
-      run: GO111MODULE=off go build -v ./...
+      run: GO111MODULE=off CGO_ENABLED=0 go build -v ./...
       
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.0.0
